@@ -1,0 +1,49 @@
+<div class="container-fluid">
+ 
+  <div class="jumbotron col-sm-4 p-2 m-0 bg-dark">
+ 
+    <h1 style="height: 50px; font-size: 1.5rem; color:gray;" class="text-sm-right">Glory's Calculator</h1>
+ 
+    <!-- //Displays the User Input [ngClass]="{'grey' : isOff, 'white': !isOff}"--> 
+    <div style="height: 100px;" class="display-text input-group input-group-sm col-sm-12 m-0 p-0">
+      <div style="font-size: 2rem;" class="col-sm-12 h-100 form-control text-lg-right font-weight-bold" type="text">{{input}}</div>
+    </div>
+ 
+    <!-- //Displays the Results -->
+    <!-- <div class="input-group input-group-sm col-sm-12 m-0 p-0">
+      <div class="form-control text-sm-right" type="text">{{result}}</div>
+    </div> -->
+ 
+    <div class="col-sm-12 p-1 m-0">
+      <button [disabled]="offVal === 'ON'" style="background-color:#E38F4F; border-color: #E38F4F;" class="btn btn-warning col-sm-3 font-weight-bold" type="button" (click)="allClear()">AC</button>
+      <button [disabled]="offVal === 'ON'" style="background-color:#E38F4F; border-color: #E38F4F;" class="btn btn-warning col-sm-3 font-weight-bold" type="button" (click)="clear()">DEL</button>
+      <button style="background-color:#2C303B; border-color: #2C303B; color:beige;" class="btn btn-warning col-sm-3 font-weight-bold" type="button" (click)="toggleOffOn()">{{offVal}}</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-secondary col-sm-3" type="button" (click)="pressOperator('/')">/</button>
+    </div>
+
+    <div class="col-sm-12 p-1 m-0">
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('7')">7</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('8')">8</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('9')">9</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-secondary col-sm-3 p-1" type="button" (click)="pressOperator('*')">X</button>
+    </div>
+    <div class="col-sm-12 p-1 m-0">
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('4')">4</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('5')">5</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('6')">6</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-secondary col-sm-3 p-1" type="button" (click)="pressOperator('-')">-</button>
+    </div>
+    <div class="col-sm-12 p-1 m-0">
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('1')">1</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('2')">2</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('3')">3</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-secondary col-sm-3 p-1" type="button" (click)="pressOperator('+')">+</button>
+    </div>
+    <div class="col-sm-12 p-1 m-0">
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('.')">.</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-outline-secondary col-sm-3 p-1" type="button" (click)="pressNum('0')">0</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-secondary col-sm-3 p-1 font-weight-bold" type="button" (click)="getAnswer()">=</button>
+      <button [disabled]="offVal === 'ON'" class="btn btn-lg btn-secondary col-sm-3 p-1" type="button" (click)="pressOperator('%')">%</button>
+    </div>
+ 
+  </div>
